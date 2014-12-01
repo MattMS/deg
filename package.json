@@ -1,0 +1,26 @@
+{
+  "name": "deg",
+  "version": "0.1.0",
+  "description": "Convert between decimal degrees and degrees minutes seconds.",
+  "main": "bin/deg",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattMS/deg.git"
+  },
+  "keywords": [
+    "conversion",
+    "decimal",
+    "degrees",
+    "minutes",
+    "seconds"
+  ],
+  "author": "Matt McKellar-Spence",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MattMS/deg/issues"
+  },
+  "homepage": "https://github.com/MattMS/deg"
+}
