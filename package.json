@@ -1,8 +1,11 @@
 {
   "name": "deg",
   "version": "0.1.0",
+  "bin": {
+    "deg": "./bin/deg"
+  },
   "description": "Convert between decimal degrees and degrees minutes seconds.",
-  "main": "bin/deg",
+  "main": "deg.js",
   "scripts": {
     "test": "node test.js"
   },
