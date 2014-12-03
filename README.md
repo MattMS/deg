@@ -1,5 +1,7 @@
 # Degrees conversions
 
+Convert between decimal degrees and degrees minutes seconds.
+
 	npm install -g deg
 
 Install globally to get the `deg` command-line tool.
