@@ -1,7 +1,7 @@
-var match_dms = /(\d+\.?\d*)\D+(\d+\.?\d*)\D+(\d+\.?\d*)/,
-	match_dm = /(\d+\.?\d*)\D+(\d+\.?\d*)/,
-	match_d = /(\d+\.?\d*)/,
-	match_n = /(\d+)(\.\d+)/;
+var dms_check = /(\d+\.?\d*)\D+(\d+\.?\d*)\D+(\d+\.?\d*)/,
+	dm_check = /(\d+\.?\d*)\D+(\d+\.?\d*)/,
+	d_check = /(\d+\.?\d*)/,
+	float_check = /(\d+)(\.\d+)/;
 
 
 module.exports = function deg (input) {
@@ -9,7 +9,7 @@ module.exports = function deg (input) {
 
 	if (isNaN(input)) {
 		// Attempt to find 3 numbers.
-		var match = match_dms.exec(input);
+		var match = dms_check.exec(input);
 
 		// Found 3 numbers.
 		if (match) {
@@ -18,42 +18,42 @@ module.exports = function deg (input) {
 
 		} else {
 			// Attempt to find 2 numbers.
-			match = match_dm.exec(input);
+			match = dm_check.exec(input);
 		}
 
 		// At least 2 numbers were found.
 		if (match) {
 			// Check if minutes have a fraction.
-			match2 = match_n.exec(match[2]);
+			float_match = float_check.exec(match[2]);
 
-			if (match2) {
+			if (float_match) {
 				// Get the integer part of the minutes.
-				m = parseInt(match2[1]);
+				m = parseInt(float_match[1]);
 
 				// Add the fraction part to the seconds.
-				s += parseFloat(match2[2]) * 60;
+				s += parseFloat(float_match[2]) * 60;
 
 			} else {
 				// Get the minutes.
-				m = parseInt(match[2]);
+				m = parseInt(float_match[2]);
 			}
 
 		} else {
 			// Attempt to find 1 number.
-			match = match_d.exec(input);
+			match = d_check.exec(input);
 		}
 
 		// At least 1 number was found.
 		if (match) {
 			// Check if degrees have a fraction.
-			match2 = match_n.exec(match[1]);
+			float_match = float_check.exec(match[1]);
 
-			if (match2) {
+			if (float_match) {
 				// Get the integer part of the degrees.
-				d = parseInt(match2[1]);
+				d = parseInt(float_match[1]);
 
 				// Add the fraction part to the minutes.
-				m += parseFloat(match2[2]) * 60;
+				m += parseFloat(float_match[2]) * 60;
 
 			} else {
 				// Get the degrees.
