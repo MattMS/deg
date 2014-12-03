@@ -2,14 +2,23 @@
 
 Convert between decimal degrees and degrees minutes seconds.
 
-	npm install -g deg
-
-Install globally to get the `deg` command-line tool.
-
 
 ## Usage
 
+### Command line
+
+	npm install -g deg
+
+Need to install globally to get the `deg` command-line tool.
+
+
 ### Node.js
+
+Save to package.json for the current project:
+
+	npm install --save deg
+
+Then you can use the module in your code:
 
 	var deg = require('deg');
 
