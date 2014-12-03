@@ -22,8 +22,8 @@ function do_test (inp, dec, d, m, s) {
 
 
 var tests = [
-	[12, 12.0, 12, 0, 0.0],
-	['12 30 6', 12.6, 12, 30, 6],
+	[1, 2.0, 2, 0, 0.0],
+	['2 30 6', 2.6, 2, 30, 6.0],
 ];
 
 tests.forEach(function (parts, index) {
