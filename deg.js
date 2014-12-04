@@ -35,7 +35,7 @@ module.exports = function deg (input) {
 
 			} else {
 				// Get the minutes.
-				m = parseInt(float_match[2]);
+				m = parseInt(match[2]);
 			}
 
 		} else {
