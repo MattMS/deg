@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
 if (process.argv.length > 2) {
+	var deg = require('../deg.js');
+
 	var parts = process.argv.slice(2);
 	var raw_text = parts.join(' ');
-	console.log(raw_text);
+	var result = deg(raw_text);
+	console.log(JSON.stringify(result));
 
 } else {
 	var lines = [
