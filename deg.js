@@ -57,7 +57,7 @@ module.exports = function deg (input) {
 
 			} else {
 				// Get the degrees.
-				m = parseInt(match[2]);
+				d = parseInt(match[1]);
 			}
 		}
 
