@@ -64,11 +64,16 @@ module.exports = function deg (input) {
 		// Calculate the decimal degrees from what was found.
 		dec = d + (m / 60.0) + (s / 60.0);
 
+	// Input is a number, so it is treated as a decimal degrees float.
 	} else {
 		dec = input;
-		d = 0;
-		m = 0;
-		s = 0;
+
+		d = Math.floor(input);
+
+		m_float = (input - d) * 60.0;
+		m = Math.floor(m_float);
+
+		s = (m_float - m) * 60.0;
 	}
 
 	return {
