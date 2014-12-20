@@ -3,7 +3,14 @@
 Convert between decimal degrees and degrees minutes seconds.
 
 
-## Usage
+## (Future) Usage
+
+Please note: most of these examples do not currently work!
+
+This is a work-in-progress (notice the version is 0.x.x).
+
+Currently only the `deg` command line works.
+
 
 ### Command line
 
