@@ -62,7 +62,7 @@ module.exports = function deg (input) {
 		}
 
 		// Calculate the decimal degrees from what was found.
-		dec = d + (m / 60.0) + (s / 60.0);
+		dec = d + (m / 60.0) + (s / 3600.0);
 
 	// Input is a number, so it is treated as a decimal degrees float.
 	} else {
