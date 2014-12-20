@@ -3,11 +3,10 @@ var assert = require('assert');
 var deg = require('./deg.js');
 
 
-function do_test (test_id, inp, dec, d, m, s) {
+function do_test (index, inp, dec, d, m, s) {
 	var result = deg(inp),
-		msg = '';
-
-	test_id += 1;
+		msg = '',
+		test_id = index + 1;
 
 	msg = 'Test ' + test_id + ' decimal needed ' + dec + ' but got ' + result.decimal;
 	assert.strictEqual(result.decimal, dec, msg);
@@ -24,9 +23,11 @@ function do_test (test_id, inp, dec, d, m, s) {
 
 
 var tests = [
-	[1, 1.0, 1, 0, 0.0],
-	[2.5, 2.5, 2, 30, 0.0],
-	['2 30 6', 2.6, 2, 30, 6.0],
+	[1, 1.0, 1, 0, 0],
+	[2.5, 2.5, 2, 30, 0],
+	['2 30 0', 2.5, 2, 30, 0],
+	[12.65, 12.65, 12, 39, 1.2789769243681803e-12],
+	['12 34 5', 12.568055555555555, 12, 34, 5],
 ];
 
 tests.forEach(function (parts, index) {
