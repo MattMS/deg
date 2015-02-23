@@ -7,6 +7,7 @@
   "description": "Convert between decimal degrees and degrees minutes seconds.",
   "main": "deg.js",
   "scripts": {
+    "build": "coffee -c deg.coffee.md",
     "test": "node test.js"
   },
   "repository": {
@@ -25,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/MattMS/deg/issues"
   },
-  "homepage": "https://github.com/MattMS/deg"
+  "homepage": "https://github.com/MattMS/deg",
+  "devDependencies": {
+    "coffee-script": "^1.9.1"
+  }
 }
