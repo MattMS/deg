@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<title>Decimal degrees to degrees minutes seconds</title>
+
+		<style>
+			noscript {
+				border: 1px solid red;
+				margin: 1em auto;
+				max-width: 24em;
+				padding: 1em;
+			}
+
+			.needs_js {
+				display: none;
+			}
+			body.has_js .needs_js {
+				display: block;
+			}
+
+			main, p {
+				text-align: center;
+			}
+
+			label {
+				display: inline-block;
+				margin: 1em;
+			}
+
+			label > span {
+				display: block;
+				margin-bottom: 0.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<noscript>
+			<h1>You have no JavaScript</h1>
+			<p>This is quite a shame, because you cannot convert your degrees here unless you use JavaScript.</p>
+			<p>Perhaps you should grab a pen and paper?</p>
+		</noscript>
+
+		<main class="needs_js">
+			<h1>Decimal degrees to degrees minutes seconds</h1>
+
+			<form>
+				<div>
+					<label>
+						<span>Decimal degrees</span>
+						<input
+							id="decimal_degrees"
+							onchange="update_degrees_minutes_seconds(event)"
+							onkeyup="update_degrees_minutes_seconds(event)"
+							type="number"
+							value="0" />
+					</label>
+				</div>
+
+				<div>
+					<label>
+						<span>Degrees</span>
+						<input
+							id="degrees"
+							onchange="update_decimal_degrees(event)"
+							onkeyup="update_decimal_degrees(event)"
+							type="number"
+							value="0" />
+					</label>
+					<label>
+						<span>Minutes</span>
+						<input
+							id="minutes"
+							onchange="update_decimal_degrees(event)"
+							onkeyup="update_decimal_degrees(event)"
+							type="number"
+							value="0" />
+					</label>
+					<label>
+						<span>Seconds</span>
+						<input
+							id="seconds"
+							onchange="update_decimal_degrees(event)"
+							onkeyup="update_decimal_degrees(event)"
+							type="number"
+							value="0" />
+					</label>
+				</div>
+			</form>
+		</main>
+
+		<p>Made by <a href="https://www.mattms.com">MattMS</a>.</p>
+
+		<script src="deg.js"></script>
+		<script>
+			document.body.className += ' has_js';
+
+			function update_decimal_degrees () {
+				var degrees = document.getElementById('degrees').value
+				var minutes = document.getElementById('minutes').value
+				var seconds = document.getElementById('seconds').value
+				var value = deg([degrees, minutes, seconds].join(' '))
+				document.getElementById('decimal_degrees').value = value.decimal.toFixed(4)
+			}
+
+			function update_degrees_minutes_seconds (event) {
+				var degrees = document.getElementById('decimal_degrees').value
+				var value = deg(degrees)
+				document.getElementById('degrees').value = value.degrees.toFixed(0)
+				document.getElementById('minutes').value = value.minutes.toFixed(0)
+				document.getElementById('seconds').value = value.seconds.toFixed(4)
+			}
+		</script>
+	</body>
+</html>
