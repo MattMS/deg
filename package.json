@@ -1,19 +1,16 @@
 {
-  "name": "deg",
-  "version": "0.2.1",
+  "author": "Matt McKellar-Spence",
   "bin": {
     "deg": "./bin/deg"
   },
+  "bugs": {
+    "url": "https://github.com/MattMS/deg/issues"
+  },
   "description": "Convert between decimal degrees and degrees minutes seconds.",
-  "main": "deg.js",
-  "scripts": {
-    "build": "coffee -c deg.coffee.md",
-    "test": "node test.js"
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MattMS/deg.git"
-  },
+  "homepage": "https://github.com/MattMS/deg",
   "keywords": [
     "conversion",
     "decimal",
@@ -21,13 +18,16 @@
     "minutes",
     "seconds"
   ],
-  "author": "Matt McKellar-Spence",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MattMS/deg/issues"
+  "main": "deg.js",
+  "name": "deg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattMS/deg.git"
   },
-  "homepage": "https://github.com/MattMS/deg",
-  "devDependencies": {
-    "coffee-script": "^1.9.1"
-  }
+  "scripts": {
+    "make": "coffee -c deg.coffee.md",
+    "test": "node test.js"
+  },
+  "version": "0.2.1"
 }
